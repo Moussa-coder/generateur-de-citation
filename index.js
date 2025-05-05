@@ -32,6 +32,14 @@ const btn = document.getElementById("btn");
 const citationEl = document.getElementById("citation");
 
 btn.addEventListener("click", () => {
-  const index = Math.floor(Math.random() * Citations.length);
-  citationEl.textContent = Citations[index];
+  // Fade out
+  citationEl.style.opacity = 0;
+
+  setTimeout(() => {
+    const index = Math.floor(Math.random() * Citations.length);
+    citationEl.textContent = Citations[index];
+    
+    // Fade in
+    citationEl.style.opacity = 1;
+  }, 500); // Temps identique au CSS transition
 });
